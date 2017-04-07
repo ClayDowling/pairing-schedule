@@ -1,0 +1,23 @@
+{
+  "name": "pairing-schedule",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndubetz/pairing-schedule.git"
+  },
+  "author": "NATE DUBETZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndubetz/pairing-schedule/issues"
+  },
+  "homepage": "https://github.com/ndubetz/pairing-schedule#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "jasmine": "^2.5.3"
+  }
+}
