@@ -1,12 +1,12 @@
 var buildGraph = require('./build-graph');
 
 describe('Graph builder', () => {
-  it('constructs a complete graph with 2 nodes and 1 edge', () => {
+  it('constructs 1 pairing with 2 nodes', () => {
     const nodes = ['Alice', 'Bob'];
     const expectedGraph = [{ node1: 'Alice', node2: 'Bob', pairing: 'Alice & Bob' }];
     expect(buildGraph(nodes)).toEqual(expectedGraph);
   });
-  it('constructs a complete graph with 4 nodes and 6 edges', () => {
+  it('constructs a 6 pairings with 4 nodes', () => {
     const nodes = ['Alice', 'Bob', 'Cathy', 'Dan'];
     const expectedGraph = [
       { node1: 'Alice', node2: 'Bob', pairing: 'Alice & Bob' },
@@ -18,7 +18,7 @@ describe('Graph builder', () => {
     ];
     expect(buildGraph(nodes)).toEqual(expectedGraph);
   });
-  it('constructs a complete graph with 6 nodes and 15 edges', () => {
+  it('constructs a 15 pairings with 6 nodes', () => {
     const nodes = ['Alice', 'Bob', 'Cathy', 'Dan', 'Ellen', 'Frank'];
     const expectedGraph = [
       { node1: 'Alice', node2: 'Bob', pairing: 'Alice & Bob' },
