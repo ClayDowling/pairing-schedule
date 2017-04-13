@@ -6,7 +6,7 @@
   "scripts": {
     "test:unit": "node ./jasmine.js",
     "test:lint": "node ./node_modules/eslint/bin/eslint.js src",
-    "test":"npm run test:unit && npm run test:unit"
+    "test":"npm run test:unit && npm run test:lint"
   },
   "repository": {
     "type": "git",
