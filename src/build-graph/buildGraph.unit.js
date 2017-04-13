@@ -16,4 +16,19 @@ describe('Graph builder', () => {
     };
     expect(buildGraph(nodes)).toEqual(expectedGraph);
   });
+  it('constructs a graph with 4 nodes and 6 edges', () => {
+    const nodes = ['Alice', 'Bob', 'Cathy', 'Dan'];
+    const expectedGraph = {
+      nodes,
+      edges: [
+        { v1: 'Alice', v2: 'Bob' },
+        { v1: 'Alice', v2: 'Cathy' },
+        { v1: 'Alice', v2: 'Dan' },
+        { v1: 'Bob', v2: 'Cathy' },
+        { v1: 'Bob', v2: 'Dan' },
+        { v1: 'Cathy', v2: 'Dan' }
+      ]
+    };
+    expect(buildGraph(nodes)).toEqual(expectedGraph);
+  });
 });
