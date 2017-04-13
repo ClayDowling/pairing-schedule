@@ -209,7 +209,7 @@ module.exports = {
     "operator-linebreak": "error",
     "padded-blocks": "off",
     "prefer-arrow-callback": "error",
-    "prefer-const": "error",
+    "prefer-const": "warn",
     "prefer-destructuring": "error",
     "prefer-numeric-literals": "error",
     "prefer-promise-reject-errors": "error",

@@ -5,14 +5,16 @@ describe('Scheduler', () => {
   it('produces one pairing schedule from one pair', () => {
     const pairs = buildPairs(['Alice', 'Bob']);
     const expectedSchedules = [
-      'Alice & Bob'
+      ['Alice & Bob']
     ];
     expect(scheduler(pairs)).toEqual(expectedSchedules);
   });
-  xit('produces three pairing schedules from six pairs', () => {
+  it('produces three pairing schedules from six pairs', () => {
     const pairs = buildPairs(['Alice', 'Bob', 'Cathy', 'Dan']);
     const expectedSchedules = [
-      ['Alice & Bob']
+      ['Alice & Bob', 'Cathy & Dan'],
+      ['Alice & Cathy', 'Bob & Dan'],
+      ['Bob & Cathy', 'Alice & Dan']
     ];
     expect(scheduler(pairs)).toEqual(expectedSchedules);
   });
