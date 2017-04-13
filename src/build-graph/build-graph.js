@@ -1,6 +1,6 @@
 function edgesAreSymmetric(edge1, edge2) {
-  return edge1.v1 == edge2.v1 && edge1.v2 == edge2.v2 ||
-    edge1.v1 == edge2.v2 && edge1.v2 == edge2.v1
+  return edge1.node1 == edge2.node1 && edge1.node2 == edge2.node2 ||
+    edge1.node1 == edge2.node2 && edge1.node2 == edge2.node1;
 }
 
 function edgeIsUnique(edge, edges) {
@@ -10,12 +10,16 @@ function edgeIsUnique(edge, edges) {
   return true;
 }
 
-function buildEdges(nodes) {
+function buildEdge(node1, node2) {
+  return { node1, node2, pairing: node1 + ' & ' + node2 };
+}
+
+function buildGraph(nodes) {
   const edges = [];
-  const numberOfNodes = nodes.length
+  const numberOfNodes = nodes.length;
   for (let i = 0; i < numberOfNodes; i++) {
     for (let j = i + 1; j < numberOfNodes; j++) {
-      const edge = { v1: nodes[i], v2: nodes[j] };
+      const edge = buildEdge(nodes[i], nodes[j]);
       if (edgeIsUnique(edge, edges)) edges.push(edge);
     }
   }
@@ -23,5 +27,5 @@ function buildEdges(nodes) {
 }
 
 module.exports = (nodes) => {
-  return buildEdges(nodes);
+  return buildGraph(nodes);
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "test:unit": "node ./jasmine.js",
     "test:lint": "node ./node_modules/eslint/bin/eslint.js src",
-    "test":"npm run test:unit && npm run test:lint"
+    "test": "npm run test:unit && npm run test:lint"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ndubetz/pairing-schedule#readme",
   "devDependencies": {
     "eslint": "^3.19.0",
-    "jasmine": "^2.5.3"
+    "jasmine": "^2.5.3",
+    "lodash": "^4.17.4"
   }
 }

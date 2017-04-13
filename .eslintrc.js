@@ -176,6 +176,7 @@ module.exports = {
     "no-unmodified-loop-condition": "error",
     "no-unneeded-ternary": "error",
     "no-unused-expressions": "error",
+    "no-unused-vars": "warn",
     "no-use-before-define": "error",
     "no-useless-call": "error",
     "no-useless-computed-key": "error",
@@ -225,7 +226,7 @@ module.exports = {
     "require-await": "error",
     "require-jsdoc": "off",
     "rest-spread-spacing": "error",
-    "semi": "off",
+    "semi": "error",
     "semi-spacing": [
       "error",
       {
@@ -234,10 +235,7 @@ module.exports = {
       }
     ],
     "sort-imports": "error",
-    "sort-keys": [
-      "error",
-      "asc"
-    ],
+    "sort-keys": "off",
     "sort-vars": "error",
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
