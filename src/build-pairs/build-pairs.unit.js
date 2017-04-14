@@ -6,7 +6,7 @@ describe('Pair builder', () => {
     const expectedGraph = [{ dev1: 'Alice', dev2: 'Bob', pair: 'Alice & Bob' }];
     expect(buildPairs(devs)).toEqual(expectedGraph);
   });
-  it('constructs a 6 pairs with 4 devs', () => {
+  it('constructs 6 pairs with 4 devs', () => {
     const devs = ['Alice', 'Bob', 'Cathy', 'Dan'];
     const expectedGraph = [
       { dev1: 'Alice', dev2: 'Bob', pair: 'Alice & Bob' },
@@ -18,7 +18,7 @@ describe('Pair builder', () => {
     ];
     expect(buildPairs(devs)).toEqual(expectedGraph);
   });
-  it('constructs a 15 pairs with 6 devs', () => {
+  it('constructs 15 pairs with 6 devs', () => {
     const devs = ['Alice', 'Bob', 'Cathy', 'Dan', 'Ellen', 'Frank'];
     const expectedGraph = [
       { dev1: 'Alice', dev2: 'Bob', pair: 'Alice & Bob' },
