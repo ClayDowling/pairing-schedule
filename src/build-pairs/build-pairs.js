@@ -2,7 +2,7 @@ function buildEdge(dev1, dev2) {
   return { dev1, dev2, pair: dev1 + ' & ' + dev2 };
 }
 
-function buildGraph(devs) {
+module.exports = (devs) => {
   const edges = [];
   const numberOfdevs = devs.length;
   for (let i = 0; i < numberOfdevs; i++) {
@@ -12,8 +12,4 @@ function buildGraph(devs) {
     }
   }
   return edges;
-}
-
-module.exports = (devs) => {
-  return buildGraph(devs);
 };
