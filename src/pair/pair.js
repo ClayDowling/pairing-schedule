@@ -16,6 +16,13 @@ class Pair {
         }
         return true;
     }
+
+    contains (dev) {
+        if (this.first === dev || this.second === dev) {
+            return true;
+        }
+        return false;
+    }
 }
 
 module.exports = Pair;

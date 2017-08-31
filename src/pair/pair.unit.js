@@ -34,4 +34,26 @@ fdescribe('Pair object', () => {
 
     });
 
+    describe('contains', () => {
+
+        it('returns true when first contains dev', () => {
+            const alpha = new Pair('Alice', 'Bob');
+
+            expect(alpha.contains('Alice')).toEqual(true);
+        });
+
+        it('returns true when second contains dev', () => {
+            const alpha = new Pair('Alice', 'Bob');
+
+            expect(alpha.contains('Bob')).toEqual(true);
+        });
+
+        it('returns false when neither first nor second contains dev', () => {
+            const alpha = new Pair('Alice', 'Bob');
+
+            expect(alpha.contains('Cathy')).toEqual(false);
+        });
+
+    });
+
 });
