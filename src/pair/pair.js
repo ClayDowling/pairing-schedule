@@ -23,6 +23,10 @@ class Pair {
         }
         return false;
     }
+
+    name () {
+        return this.first + ' & ' + this.second;
+    }
 }
 
 module.exports = Pair;

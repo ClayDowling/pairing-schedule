@@ -56,4 +56,20 @@ fdescribe('Pair object', () => {
 
     });
 
+    describe('name', () => {
+
+        it('for Alice and Bob returns Alice & Bob', () => {
+            const alpha = new Pair('Alice', 'Bob');
+
+            expect(alpha.name()).toEqual('Alice & Bob');
+        });
+
+        it('for Cathy and Dave returns Cathy & Dave', () => {
+            const alpha = new Pair('Cathy', 'Dave');
+
+            expect(alpha.name()).toEqual('Cathy & Dave');
+        });
+
+    });
+
 });
