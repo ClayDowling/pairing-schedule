@@ -1,5 +1,7 @@
+const Pair = require('../pair/pair.js');
+
 function buildEdge(dev1, dev2) {
-  return { dev1, dev2, pair: dev1 + ' & ' + dev2 };
+  return new Pair(dev1, dev2);
 }
 
 module.exports = (devs) => {

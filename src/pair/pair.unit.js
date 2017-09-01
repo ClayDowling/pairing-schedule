@@ -1,6 +1,6 @@
 const Pair = require('./pair.js');
 
-fdescribe('Pair object', () => {
+describe('Pair object', () => {
 
     describe('equals', () => {
 

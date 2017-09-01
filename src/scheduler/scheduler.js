@@ -4,8 +4,10 @@ module.exports = (devs, pairings) => {
   for (let i = 0; i < numberOfPairings / (devs.length / 2); i++) {
     const schedule = [];
     // for (let j = 0; j < devs.length / 2; j++) {
-    schedule.push(pairings[i].pair);
-    if (pairings[i].pair != pairings[numberOfPairings - 1 - i].pair) schedule.push(pairings[numberOfPairings - 1 - i].pair);
+    schedule.push(pairings[i]);
+    if (pairings[i].name() != pairings[numberOfPairings - 1 - i].name()) {
+      schedule.push(pairings[numberOfPairings - 1 - i]);
+    }
     // }
     schedules.push(schedule);
   }

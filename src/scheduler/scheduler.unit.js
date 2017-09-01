@@ -1,3 +1,4 @@
+const Pair = require('../pair/pair.js');
 const buildPairs = require('../build-pairs/build-pairs');
 const scheduler = require('./scheduler');
 
@@ -6,7 +7,7 @@ describe('Scheduler', () => {
     const devs = ['Alice', 'Bob'];
     const pairs = buildPairs(devs);
     const expectedSchedules = [
-      ['Alice & Bob']
+      [new Pair('Alice', 'Bob')]
     ];
     expect(scheduler(devs, pairs)).toEqual(expectedSchedules);
   });
@@ -14,21 +15,21 @@ describe('Scheduler', () => {
     const devs = ['Alice', 'Bob', 'Cathy', 'Dan'];
     const pairs = buildPairs(devs);
     const expectedSchedules = [
-      ['Alice & Bob', 'Cathy & Dan'],
-      ['Alice & Cathy', 'Bob & Dan'],
-      ['Alice & Dan', 'Bob & Cathy']
+      [new Pair('Alice', 'Bob'), new Pair('Cathy', 'Dan')],
+      [new Pair('Alice', 'Cathy'), new Pair('Bob', 'Dan')],
+      [new Pair('Alice', 'Dan'), new Pair('Bob', 'Cathy')]
     ];
     expect(scheduler(devs, pairs)).toEqual(expectedSchedules);
   });
-  xit('produces five pairing schedules from fifteen pairs', () => {
+  it('produces five pairing schedules from fifteen pairs', () => {
     const devs = ['Alice', 'Bob', 'Cathy', 'Dan', 'Ellen', 'Frank'];
     const pairs = buildPairs(devs);
     const expectedSchedules = [
-      ['Alice & Bob', 'Cathy & Dan', 'Ellen & Frank'],
-      ['Alice & Frank', 'Bob & Cathy', 'Dan & Ellen'],
-      ['Alice & Dan', 'Bob & Frank', 'Cathy & Ellen'],
-      ['Alice & Cathy', 'Bob & Ellen', 'Dan & Frank'],
-      ['Alice & Ellen', 'Bob & Dan', 'Cathy & Frank']
+      [new Pair('Alice', 'Bob'), new Pair('Cathy', 'Dan'), new Pair('Ellen', 'Frank')],
+      [new Pair('Alice', 'Frank'), new Pair('Bob', 'Cathy'), new Pair('Dan', 'Ellen')],
+      [new Pair('Alice', 'Dan'), new Pair('Bob', 'Frank'), new Pair('Cathy', 'Ellen')],
+      [new Pair('Alice', 'Cathy'), new Pair('Bob', 'Ellen'), new Pair('Dan', 'Frank')],
+      [new Pair('Alice', 'Ellen'), new Pair('Bob', 'Dan'), new Pair('Cathy', 'Frank')]
     ];
     expect(scheduler(devs, pairs)).toEqual(expectedSchedules);
   });
