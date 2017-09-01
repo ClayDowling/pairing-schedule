@@ -33,4 +33,20 @@ fdescribe('PairSet object', () => {
         });
     });
 
+    describe('contains', () => {
+        it('returns true when Pair is contained in pairs', () => {
+            const ps = new PairSet();
+            const alpha = new Pair('Alice', 'Bob');
+            ps.add(alpha);
+
+            expect(ps.contains(alpha)).toEqual(true);
+        });
+        it('returns false when Pair is not contained in pairs', () => {
+            const ps = new PairSet();
+            const alpha = new Pair('Alice', 'Bob');
+
+            expect(ps.contains(alpha)).toEqual(false);
+        });
+    });
+
 });
